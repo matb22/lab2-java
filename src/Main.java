@@ -6,14 +6,23 @@ import src.task_1.Point;
 import java.util.Scanner;
 import src.task_3.Student;
 import src.task_5.Line3;
+import java.util.Arrays;
+
 public class Main {
   
   public static void main(String[] args) {
   Scanner sc = new Scanner(System.in);
   
   Menu.printMenu();
-  int taskNumber = sc.nextInt();
-  Menu.selectTask(taskNumber);
+  try {
+    int taskNumber = sc.nextInt();
+    Menu.selectTask(taskNumber);
+  }
+  catch(IllegalArgumentException e) {
+    System.out.println(e);
+  }
+   
+  
     
   }
 }
@@ -73,7 +82,21 @@ class Menu {
         System.out.println("коорд 1 линии изменились не меняя коорд 3 линии : 1 )" + line1.toString() + "2)" + line2.toString() );
         break;
       case 3:
-        Student student = new Student("Вася", [3,4,5]);
+        
+        Student student1 = new Student("Вася", new int []  {3,4,5});
+        System.out.println(student1.toString());
+        Student student2 = new Student("Петя ", student1.getMarks());
+        System.out.println(student2.toString());
+
+        int[] newPetyaMarks = student2.getMarks(); 
+        newPetyaMarks[0] = 5; 
+        student2.setMarks(newPetyaMarks);
+        System.out.println(student1.toString());
+        System.out.println(student2.toString());
+        Student andrey = new Student("Андрей", Arrays.copyOf(student1.getMarks(), student1.getMarks().length));
+        System.out.println(andrey.toString());
+        
+
         break;
       case 4 :
         Point point1_4 = new Point(3,5);

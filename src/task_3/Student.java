@@ -15,8 +15,12 @@ public class Student {
     this.marks = marks ;
   }
 
+  public int[] getMarks (){return  marks ;}
+  public String getName (){return name;}
 
-
+  public void setMarks (int[] marks){this.marks = marks ;} 
+  public void setName (String name){this.name = name ;} 
+  
 
 
   public String toString() {
