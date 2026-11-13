@@ -95,7 +95,7 @@ class Menu {
         System.out.println(student2.toString());
         Student andrey = new Student("Андрей", Arrays.copyOf(student1.getMarks(), student1.getMarks().length));
         System.out.println(andrey.toString());
-        
+
 
         break;
       case 4 :
@@ -111,6 +111,7 @@ class Menu {
         System.out.println("2)" + line5_2.toString());
         Line2 line5_3 = new Line2(line5_1.getX1() , line5_1.getY1() , line5_2.getX2() , line5_2.getY2()) ;
         System.out.println("3)" + line5_3.toString());
+        break;
       case 6:
         Line3 line6_1 = new Line3(1 , 1 ,10 ,15);
         System.out.println("длина линии: " + line6_1.toString() + " = " + line6_1.range());
